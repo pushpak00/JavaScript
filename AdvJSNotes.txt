@@ -25,3 +25,77 @@ KeyBoard Events -
 	keypress          A key that normally produces a character value has been pressed.
                           this event was highly device-dependent and is absolute. You should not use it.
 	input             
+
+
+***********************************************************************************************************
+
+
+DOM SELECTOR
+
+> document.getElementById('title').id             - shows name of id                                    
+> document.getElementById('title').className      - shows name of class
+> document.getElementById('title').getAttribute('id')         - shows value of attribute
+> document.getElementById('title').getAttribute('class')      - shows value of attribute
+> document.getElementById('title').setAttribute(key, value)
+  document.getElementById('title').setAttribute('class', 'heading')       - set the value of attribute
+
+> const title = document.getElementById('title')
+> title.style.backgroundColor = 'orange'                -|        
+> title.style.padding = "15px"                          -| can change the style 
+> title.style.borderRadius = "5px"                      -|
+
+> title.innerText                     -|
+> title.textContent                   -| can manipulate value or content of particular tag
+> title.innerHTML                     -|
+
+
+
+> document.querySelector("h2")
+> document.querySelector(".heading")     - class
+> document.querySelector("#title")       - id
+
+> document.querySelector("input[type="password"]")        - supports all query selectors
+
+---------------------------------------------------------
+>> document.querySelector("ul")       - selects 1st element   |
+                                                              |
+>> const myul = document.querySelector('ul')                  | can also do this 
+>> myul.querySelector('li')                              *    | can also use .querySelector on initialised variable
+>> const turnGreen = myul.querySelector('li')                 | with document.querySelector
+>> turnGreen.style.backgroundColor = "green"                  |
+---------------------------------------------------------
+
+____________________________________________________________
+
+>> document.querySelectorAll('li')       - selects all 'li' element
+                                         - querySelectorAll written 'NodeList' datatype
+
+>> const tempList = document.querySelectorAll('li')
+>> tempList[0].style.color = 'Orange'    - always use [] with querySelectorAll, 
+                                         - it depends on querySelector or querySelectorAll writtens which datatypes
+
+____________________________________________________________
+
+
+>> document.getElementByClassName('list-item')        - it will give HTMLCollection datatype
+
+>> const tempClassList = document.getElementByClassName('list-item')    -- we cannot apply forEach or map to HTMLCollection
+
+>> Array.from(tempClassList)            -- convert HTMLCollection to Array
+>> const myConvertedArray = Array.from(tempClassList)
+
+>> myConvertedArray.forEach(function(li){               |
+	li.style.color = 'orange';                      | apply color to every element
+	li.style.backgroundColor = "yellow";            |
+	li.style.padding = "10px";                      |
+   })                                                   | we can change this way 
+
+
+ 
+
+
+
+
+
+
+
